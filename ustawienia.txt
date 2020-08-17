@@ -1,0 +1,4 @@
+Wysokosc mapy:9
+Szerokosc mapy:9
+Prędkosc weza:5
+Znaczek jedzenia:T
