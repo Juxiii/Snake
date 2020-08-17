@@ -59,7 +59,7 @@ int wczytaj_plik(int &wielkosc_x, int &wielkosc_y, int &predkosc, char &punkcik)
 	{
 		cout << "Dostep do pliku zostal zabroniony!" << endl;
 		_getch();
-		return 999;
+		return 997;
 	}
 	cout << "Uzyskano dostep do pliku!" << endl;
 
@@ -69,9 +69,9 @@ int wczytaj_plik(int &wielkosc_x, int &wielkosc_y, int &predkosc, char &punkcik)
 	getline(plik, dane_pliku);
 	wielkosc_y = stoi(dane_pliku.erase(0, dane_pliku.find(":") + 1));
 	getline(plik, dane_pliku);
-	predkosc = stoi(dane_pliku.erase(0, dane_pliku.find(":") + 1)); 
+	predkosc = stoi(dane_pliku.erase(0, dane_pliku.find(":") + 1));
 	getline(plik, dane_pliku);
-	punkcik = dane_pliku.erase(0, dane_pliku.find(":") + 1)[0]; 
+	punkcik = dane_pliku.erase(0, dane_pliku.find(":") + 1)[0];
 
 	return 1;
 }

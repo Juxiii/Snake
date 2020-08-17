@@ -4,7 +4,7 @@
 using namespace std;
 
 int main()
-{	
+{
 	//Obsluga okna
 	HANDLE hOut;
 	HWND console = GetConsoleWindow();
@@ -65,7 +65,8 @@ int main()
 				exit(0);
 			default: wybor_menu = 999;
 			}
-			wybor_menu=sprawdz_poprawnosc_danych(*wielkosc_x, *wielkosc_y, *predkosc, *punkcik);
+			if(wybor_menu == 997) wybor_menu = 999;
+			else wybor_menu=sprawdz_poprawnosc_danych(*wielkosc_x, *wielkosc_y, *predkosc, *punkcik);
 		} while (wybor_menu == 999);
 
 		//TWORZENIE OBIEKTÓW
@@ -84,10 +85,10 @@ int main()
 		{
 			//SPRAWDZANIE CZY ZJADL
 			if (pole.czy_zjadl(jedzonko, waz) == true) pole.ustaw_punkt(jedzonko, waz);
-			
+
 			//SPRAWDZANIE BUFORA KLAWIATURY
 			if (_kbhit() == 1) waz.zmiana_kierunku(_getch());
-			
+
 			//RUCH
 			waz.ruch(pole);
 			pole.powieksz_weza(jedzonko, waz);
@@ -96,7 +97,7 @@ int main()
 			if (pole.czy_zginal(waz) == false)
 			{
 				wyswietl_mape(waz, jedzonko, pole, wsk);
-				Sleep(1000 / *predkosc); 
+				Sleep(1000 / *predkosc);
 				system("cls");
 			}
 			else cout << "PRZEGRANA" << endl;
